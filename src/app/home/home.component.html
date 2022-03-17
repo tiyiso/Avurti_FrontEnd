@@ -1,0 +1,124 @@
+<app-dashboard></app-dashboard>
+<!-- ======= CQM FORM ======= -->
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1 class="text-info">Add Agent</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item">Agent</li>
+
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+    <section id="contact" class="contact">
+      <div class="container p-2">
+
+        <div  class="row ">
+            <div *ngIf="EmpSaved && !EmpSaveFailed" class="col-md-6 offset-3">
+
+                <a class="btn btn-success justify-content-center d-flex">Employee Added</a>
+            </div>
+        </div>
+        <div *ngIf="EmpSaveFailed" class="row ">
+            <div class="col-md-6 offset-3">
+                <a class="btn btn-danger justify-content-arround">Employee Already saved</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title ">Save Employee</h5>
+
+            <!-- Vertical Form -->
+            <form [formGroup]="addEmp" (submit)="addemployee()" ngNativeValidate class="row g-3">
+              <div class="col-12">
+                <label for="inputNanme4" class="form-label">Employee Name</label>
+                <input type="text" formControlName="name" class="form-control" id="name" placeholder="Name" minlenght="4" maxlength="20" required>
+              </div>
+              <div class="col-12">
+                <label for="inputNanme4" class="form-label">Employee Email</label>
+                <input type="email" formControlName="email" class="form-control" id="name" placeholder="Email" minlenght="4" maxlength="70" required>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-info text-light">Submit</button>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- End CQM FORM -->
+    <section id="contact" class="contact">
+        <div class="container p-2">
+  
+          <div  class="row ">
+              <div *ngIf="PerfSaved && !PerfSaveFailed" class="col-md-6 offset-3">
+  
+                  <a class="btn btn-success justify-content-center d-flex">Perfomance Saved</a>
+              </div>
+          </div>
+          <div *ngIf="PerfSaveFailed" class="row ">
+              <div class="col-md-6 offset-3">
+                  <a class="btn btn-danger justify-content-arround">Failed to save performnce</a>
+  
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title ">Save Employee performance</h5>
+  
+              <!-- Vertical Form -->
+              <form [formGroup]="addPerf" (submit)="addeperformance()" ngNativeValidate class="row g-3">
+                <div class="col-6">
+                  <label for="inputNanme4" class="form-label">Choose Employee</label>
+                  <select class="form-select" aria-label="Default select example" formControlName="name" required>
+                    <option *ngFor="let emp of Empl">{{ emp.name }}</option>
+               </select>
+                </div>
+                <div class="col-6">
+                  <label for="inputNanme4" class="form-label">Score</label>
+                  <input type="tel" formControlName="score" class="form-control" id="name" placeholder="Percantage..." maxlength="2" required>
+                </div>
+  
+                <div class="text-center">
+                  <button type="submit" class="btn btn-info text-light">Done</button>
+  
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+  
+      </section>
+
+            </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

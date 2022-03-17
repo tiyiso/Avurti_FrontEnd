@@ -1,0 +1,71 @@
+<app-dashboard></app-dashboard>
+<section>
+  <main id="main" class="main">
+        <div class="pagetitle">
+          <h1>Previous Performance</h1>
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Reports</a></li>
+              <li class="breadcrumb-item">Employee Performance</li>
+
+            </ol>
+          </nav>
+        </div><!-- End Page Title -->
+      <div class="container">
+
+      <table #dataTable ng-if="MResults"  class="table dataable" cellspacing="4" width="100%">
+        <thead class="text-info">
+            <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Score (%)</th>
+            <th>Action</th>
+            <th></th>
+            
+
+        </tr>
+        </thead>
+
+        <tbody  >
+            <tr *ngFor = "let pf of performances">
+
+            <td >{{ pf.id  }}</td>
+            <td >{{ pf.employee?.name }}</td>
+             <td>{{ pf.score }}</td>
+             <td><button (click)="editPerformance(pf)" class="btn btn-success">Edit</button></td>
+             <td >  <button (click)="delPerformance(pf)" class="btn btn-danger">Delete</button></td>
+            </tr>
+
+            </tbody>
+        </table>
+   </div>
+      <!--<ng-template #content let-modal> -->
+        <!-- <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="dateOfBirth">Date of birth</label>
+              <div class="input-group">
+                <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+        </div>
+      </ng-template>
+      
+      <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+      
+      <hr>
+      
+      <pre>{{ closeResult }}</pre> -->
+</main>
+</section>
+
+
